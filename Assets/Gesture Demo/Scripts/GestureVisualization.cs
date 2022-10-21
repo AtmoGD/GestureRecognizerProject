@@ -14,7 +14,7 @@ public class GestureVisualization : MonoBehaviour
     private void Start()
     {
         gestureRecognizer.OnTap += Tapped;
-        gestureRecognizer.OnPress += Pressed;
+        // gestureRecognizer.OnPress += Pressed;
         gestureRecognizer.OnDragStart += DragStarted;
         gestureRecognizer.OnDrag += Dragged;
         gestureRecognizer.OnDragEnd += DragEnded;
@@ -39,7 +39,7 @@ public class GestureVisualization : MonoBehaviour
     {
         text.text = "Drag started at " + position;
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(position);
-        Instantiate(dragPrefab, worldPosition, Quaternion.identity);
+        Instantiate(pressPrefab, worldPosition, Quaternion.identity);
     }
 
     private void Dragged(Vector2 start, Vector2 end)

@@ -41,10 +41,11 @@ public class GestureRecognizer : StateMachine
     [SerializeField] private float pressTime = 0.4f;
     public float PressTime { get { return pressTime; } }
     [SerializeField] private float dragTime = 0.3f;
+    public float DragTime { get { return dragTime; } }
     [SerializeField] private float minDragDistance = 0.2f;
     public float MinDragDistance { get { return minDragDistance; } }
-    [SerializeField] private float swipeTime = 0.3f;
-    public float SwipeTime { get { return swipeTime; } }
+    // [SerializeField] private float swipeTime = 0.3f;
+    // public float SwipeTime { get { return swipeTime; } }
     [SerializeField] private float swipeDistance = 0.2f;
     public float SwipeDistance { get { return swipeDistance; } }
     [SerializeField] private float pinchDistance = 0.2f;
@@ -52,6 +53,13 @@ public class GestureRecognizer : StateMachine
     [SerializeField] private float rotateDistance = 0.2f;
     public float RotateDistance { get { return rotateDistance; } }
     #endregion
+
+    private void Start()
+    {
+        inputData = new InputData();
+        currentState = noGestureState;
+        ChangeState(noGestureState);
+    }
 
     public bool IsTap
     {
@@ -61,19 +69,19 @@ public class GestureRecognizer : StateMachine
         }
     }
 
-    public bool IsPress
-    {
-        get
-        {
-            return Input.touchStarted && !Input.touchEnded && Input.TouchDuration > PressTime && DragDistance < MinDragDistance && DragDistance < SwipeDistance;
-        }
-    }
+    // public bool IsPress
+    // {
+    //     get
+    //     {
+    //         return Input.touchStarted && !Input.touchEnded && Input.TouchDuration > PressTime && DragDistance < MinDragDistance && DragDistance < SwipeDistance;
+    //     }
+    // }
 
     public bool IsDrag
     {
         get
         {
-            return Input.touchStarted && !Input.touchEnded && Input.TouchDuration > TapTime && DragDistance > MinDragDistance;
+            return Input.touchStarted && !Input.touchEnded && Input.TouchDuration > DragTime && DragDistance > MinDragDistance;
         }
     }
 
@@ -89,88 +97,11 @@ public class GestureRecognizer : StateMachine
     {
         get
         {
-            return Input.touchStarted && Input.touchEnded && Input.TouchDuration < SwipeTime && DragDistance > SwipeDistance;
-            // return Input.touchEnded && Input.TouchDuration < TapTime && DragDistance > SwipeDistance;
+            // return Input.touchStarted && Input.touchEnded && Input.TouchDuration < SwipeTime && DragDistance > SwipeDistance;
+            // return Input.touchStarted && Input.TouchDuration < SwipeTime && DragDistance > SwipeDistance;
+            return Input.touchDelta.magnitude > SwipeDistance;
         }
     }
-
-    #region Timer
-    private float tapTimer = 0;
-    private float pinchTimer = 0;
-    private float rotateTimer = 0;
-    #endregion
-
-    private void Start()
-    {
-        inputData = new InputData();
-        currentState = noGestureState;
-        ChangeState(noGestureState);
-    }
-
-    // private new void Update()
-    // {
-    //     base.Update();
-
-    // return;
-    /*
-    if the tap timer is less than the tap time its a tap
-    if the tap timer is greater than the tap time and the total distance is less than the drag distance its a press
-    if the tap timer is greater than the tap time and the total distance is greater than the drag distance its a drag
-    if the tap timer is less than the tap time and the total distance is greater than the swipe distance its a swipe
-    */
-
-    // if the tap timer is less than the tap time its a tap
-    // if (inputData.touchStarted && inputData.touchEnded && (Time.time - inputData.touchStartTime) < tapTime && Vector2.Distance(inputData.touchStartPosition, inputData.touchPosition) > swipeDistance)
-    // {
-    //     inputData.swipe = true;
-    //     inputData.swipeDirection = GetSwipeDirection(inputData.touchStartPosition, inputData.touchPosition);
-    //     OnSwipe?.Invoke(inputData.swipeDirection);
-    //     return;
-    // }
-
-    // if (inputData.touchStarted && !inputData.touchEnded && Vector2.Distance(inputData.touchStartPosition, inputData.touchPosition) > minDragDistance)
-    // {
-    //     inputData.drag = true;
-    //     inputData.dragStart = inputData.touchStartPosition;
-    //     OnDragStart?.Invoke(inputData.dragStart);
-    //     return;
-    // }
-
-    // if (inputData.drag)
-    // {
-    //     if (inputData.touchEnded)
-    //     {
-    //         inputData.dragEnd = inputData.touchPosition;
-    //         OnDragEnd?.Invoke(inputData.dragStart, inputData.dragEnd);
-    //         return;
-    //     }
-    //     else
-    //     {
-    //         OnDrag?.Invoke(inputData.dragStart, inputData.touchPosition);
-    //         return;
-    //     }
-    // }
-
-    // if (inputData.touchStarted && inputData.touchEnded && (Time.time - inputData.touchStartTime) < tapTime)
-    // {
-    //     inputData.tap = true;
-    //     OnTap?.Invoke(inputData.touchStartPosition);
-    //     return;
-    // }
-
-    // if (inputData.touchStarted && !inputData.touchEnded && (Time.time - inputData.touchStartTime) > tapTime)
-    // {
-    //     inputData.press = true;
-    //     OnPress?.Invoke(inputData.touchStartPosition);
-    //     return;
-    // }
-
-    // if the tap timer is greater than the tap time and the total distance is higher than the drag distance its a drag
-
-    // if the tap timer is less than the tap time and the total distance is higher than the swipe distance its a swipe
-
-
-    // }
 
     public static SwipeDirection GetSwipeDirection(Vector2 start, Vector2 end)
     {

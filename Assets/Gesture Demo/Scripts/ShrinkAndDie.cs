@@ -6,13 +6,7 @@ public class ShrinkAndDie : MonoBehaviour
 {
     public float shrinkSpeed = 0.1f;
     public float dieAfter = 0.2f;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         dieAfter -= Time.deltaTime;

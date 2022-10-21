@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1009380728314865115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3202440595373497868, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497904, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_Name
+      value: TouchGestureRecognizer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497905, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Touch
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10c5da2a68670324da4884d9ace06338, type: 3}

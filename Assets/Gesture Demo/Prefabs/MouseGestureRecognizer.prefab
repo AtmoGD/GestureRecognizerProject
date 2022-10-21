@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3202440595373497904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3202440595373497871}
+  - component: {fileID: 3202440595373497870}
+  - component: {fileID: 3202440595373497905}
+  - component: {fileID: 3202440595373497868}
+  m_Layer: 0
+  m_Name: MouseGestureRecognizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3202440595373497871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202440595373497904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3202440595373497870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202440595373497904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ac85ebbc0f60f4a9de853f47b1c0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputData:
+    touchStarted: 0
+    touchEnded: 0
+    touchStartPosition: {x: 0, y: 0}
+    touchPosition: {x: 0, y: 0}
+    touchDelta: {x: 0, y: 0}
+    touchStartTime: 0
+    tap: 0
+    press: 0
+    drag: 0
+    dragStart: {x: 0, y: 0}
+    dragEnd: {x: 0, y: 0}
+    swipe: 0
+    swipeDirection: 3
+  tapTime: 0.4
+  pressTime: 1
+  dragTime: 0.2
+  minDragDistance: 100
+  swipeTime: 0.2
+  swipeDistance: 100
+  pinchDistance: 0.2
+  rotateDistance: 0.2
+--- !u!114 &3202440595373497905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202440595373497904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: cd9dc9c81037cf04881b41fe7b3670e2, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3202440595373497870}
+        m_TargetAssemblyTypeName: GestureRecognizer, Assembly-CSharp
+        m_MethodName: OnSingleTap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 779062fd-9709-4558-a92d-25c2d21441a9
+    m_ActionName: Gestures/SingleTap[/Touchscreen/press]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3202440595373497870}
+        m_TargetAssemblyTypeName: GestureRecognizer, Assembly-CSharp
+        m_MethodName: OnMultiTouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1ef8b86b-a29f-474a-9628-1b4f2ff5b9ab
+    m_ActionName: Gestures/MultiTouch[/Touchscreen/touch0/press,/Touchscreen/touch1/press,/Touchscreen/touch2/press,/Touchscreen/touch3/press,/Touchscreen/touch4/press,/Touchscreen/touch5/press,/Touchscreen/touch6/press,/Touchscreen/touch7/press,/Touchscreen/touch8/press,/Touchscreen/touch9/press]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3202440595373497870}
+        m_TargetAssemblyTypeName: GestureRecognizer, Assembly-CSharp
+        m_MethodName: OnPosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6ffb06f1-128f-4f7e-a7c4-d021f4d24605
+    m_ActionName: Gestures/Position[/Touchscreen/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3202440595373497870}
+        m_TargetAssemblyTypeName: GestureRecognizer, Assembly-CSharp
+        m_MethodName: OnDelta
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ade5b626-2b80-4ba0-95b4-0a0e0962a74e
+    m_ActionName: Gestures/Delta[/Touchscreen/delta]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Mouse
+  m_DefaultActionMap: Gestures
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &3202440595373497868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202440595373497904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493766d913517a046a77b9b97ec87956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gestureRecognizer: {fileID: 3202440595373497870}
+  text: {fileID: 0}
+  tapPrefab: {fileID: 4489197647960261578, guid: 14b4ed1ff4da83e4db92784e97a16f0e, type: 3}
+  pressPrefab: {fileID: 4489197647960261578, guid: 07dd5091ffc79664a9e58b7c58e69688, type: 3}
+  dragPrefab: {fileID: 4489197647960261578, guid: bf4bc9a059698a84193b320c2594b49e, type: 3}
+  swipePrefab: {fileID: 4489197647960261578, guid: c1650104d698a2345857db0912b6d92a, type: 3}

@@ -8,16 +8,12 @@ public class PressState : GestureState
     {
         base.Enter(_stateMachine);
 
-        recognizer.InvokeOnPress(recognizer.Input.touchPosition);
-
-        // Debug.Log("PressState: Enter");
+        recognizer.InvokeOnPress(recognizer.Input.touchStartPosition);
     }
 
     public override void Exit()
     {
         base.Exit();
-
-        // Debug.Log("PressState: Exit");
     }
 
     public override void LogicUpdate()
@@ -29,10 +25,10 @@ public class PressState : GestureState
             recognizer.ChangeState(recognizer.noGestureState);
         }
 
-        if (recognizer.IsDrag)
-        {
-            recognizer.ChangeState(recognizer.dragState);
-        }
+        // if (recognizer.IsDrag)
+        // {
+        //     recognizer.ChangeState(recognizer.dragState);
+        // }
     }
 
     public override void PhysicsUpdate()

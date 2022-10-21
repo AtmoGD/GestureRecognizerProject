@@ -8,9 +8,7 @@ public class DragState : GestureState
     {
         base.Enter(_stateMachine);
 
-        recognizer.InvokeOnDragStart(recognizer.Input.touchStartPosition);
-
-        // Debug.Log("Drag Start");
+        recognizer.InvokeOnDragStart(recognizer.Input.touchPosition);
     }
 
     public override void Exit()

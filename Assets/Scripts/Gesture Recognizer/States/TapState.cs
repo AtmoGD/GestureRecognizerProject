@@ -10,8 +10,6 @@ public class TapState : GestureState
         base.Enter(_stateMachine);
 
         recognizer.InvokeOnTap(recognizer.Input.touchPosition);
-        recognizer.Input.touchStarted = false;
-        recognizer.Input.touchEnded = false;
 
         recognizer.ChangeState(recognizer.noGestureState);
     }
@@ -19,6 +17,8 @@ public class TapState : GestureState
     public override void Exit()
     {
         base.Exit();
+
+        recognizer.Input.Reset();
     }
 
     public override void LogicUpdate()
