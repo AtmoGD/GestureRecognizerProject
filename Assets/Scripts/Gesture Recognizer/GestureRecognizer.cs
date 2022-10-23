@@ -12,6 +12,8 @@ public class GestureRecognizer : StateMachine
     #region Actions
     public Action<Vector2> OnTap;
     public void InvokeOnTap(Vector2 _position) { OnTap?.Invoke(_position); }
+    public Action<Vector2> OnDoubleTap;
+    public void InvokeOnDoubleTap(Vector2 _position) { OnDoubleTap?.Invoke(_position); }
     public Action<Vector2> OnPress;
     public void InvokeOnPress(Vector2 _position) { OnPress?.Invoke(_position); }
     public Action<Vector2> OnDragStart;
@@ -38,20 +40,27 @@ public class GestureRecognizer : StateMachine
     [Header("Settings")]
     [SerializeField] private float tapTime = 0.2f;
     public float TapTime { get { return tapTime; } }
+
+    // [SerializeField] private float doubleTapTime = 0.2f;
+    // public float DoubleTapTime { get { return doubleTapTime; } }
+
+
+
+
     [SerializeField] private float pressTime = 0.4f;
     public float PressTime { get { return pressTime; } }
-    [SerializeField] private float dragTime = 0.3f;
-    public float DragTime { get { return dragTime; } }
+    // [SerializeField] private float dragTime = 0.3f;
+    // public float DragTime { get { return dragTime; } }
     [SerializeField] private float minDragDistance = 0.2f;
     public float MinDragDistance { get { return minDragDistance; } }
     // [SerializeField] private float swipeTime = 0.3f;
     // public float SwipeTime { get { return swipeTime; } }
-    [SerializeField] private float swipeDistance = 0.2f;
-    public float SwipeDistance { get { return swipeDistance; } }
-    [SerializeField] private float pinchDistance = 0.2f;
-    public float PinchDistance { get { return pinchDistance; } }
-    [SerializeField] private float rotateDistance = 0.2f;
-    public float RotateDistance { get { return rotateDistance; } }
+    // [SerializeField] private float swipeDistance = 0.2f;
+    // public float SwipeDistance { get { return swipeDistance; } }
+    // [SerializeField] private float pinchDistance = 0.2f;
+    // public float PinchDistance { get { return pinchDistance; } }
+    // [SerializeField] private float rotateDistance = 0.2f;
+    // public float RotateDistance { get { return rotateDistance; } }
     #endregion
 
     private void Start()
@@ -65,7 +74,8 @@ public class GestureRecognizer : StateMachine
     {
         get
         {
-            return Input.touchStarted && Input.touchEnded && Input.TouchDuration < TapTime;
+            // return Input.touchStarted && Input.touchEnded && Input.TouchDuration < TapTime;
+            return Input.touchStarted;
         }
     }
 
@@ -77,13 +87,13 @@ public class GestureRecognizer : StateMachine
     //     }
     // }
 
-    public bool IsDrag
-    {
-        get
-        {
-            return Input.touchStarted && !Input.touchEnded && Input.TouchDuration > DragTime && DragDistance > MinDragDistance;
-        }
-    }
+    // public bool IsDrag
+    // {
+    //     get
+    //     {
+    //         return Input.touchStarted && !Input.touchEnded && Input.TouchDuration > DragTime && DragDistance > MinDragDistance;
+    //     }
+    // }
 
     public float DragDistance
     {
@@ -93,15 +103,15 @@ public class GestureRecognizer : StateMachine
         }
     }
 
-    public bool IsSwipe
-    {
-        get
-        {
-            // return Input.touchStarted && Input.touchEnded && Input.TouchDuration < SwipeTime && DragDistance > SwipeDistance;
-            // return Input.touchStarted && Input.TouchDuration < SwipeTime && DragDistance > SwipeDistance;
-            return Input.touchDelta.magnitude > SwipeDistance;
-        }
-    }
+    // public bool IsSwipe
+    // {
+    //     get
+    //     {
+    //         // return Input.touchStarted && Input.touchEnded && Input.TouchDuration < SwipeTime && DragDistance > SwipeDistance;
+    //         // return Input.touchStarted && Input.TouchDuration < SwipeTime && DragDistance > SwipeDistance;
+    //         return Input.touchDelta.magnitude > SwipeDistance;
+    //     }
+    // }
 
     public static SwipeDirection GetSwipeDirection(Vector2 start, Vector2 end)
     {

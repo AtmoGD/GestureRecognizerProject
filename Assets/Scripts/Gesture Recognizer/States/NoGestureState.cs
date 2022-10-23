@@ -25,8 +25,8 @@ public class NoGestureState : GestureState
 
         // if (recognizer.IsPress) { recognizer.ChangeState(recognizer.pressState); return; }
 
-        if (recognizer.IsDrag) { recognizer.ChangeState(recognizer.dragState); return; }
-        if (recognizer.IsSwipe) { recognizer.ChangeState(recognizer.swipeState); return; }
+        // if (recognizer.IsDrag) { recognizer.ChangeState(recognizer.dragState); return; }
+        // if (recognizer.IsSwipe) { recognizer.ChangeState(recognizer.swipeState); return; }
     }
 
     public override void PhysicsUpdate()

@@ -14,7 +14,8 @@ public class GestureVisualization : MonoBehaviour
     private void Start()
     {
         gestureRecognizer.OnTap += Tapped;
-        // gestureRecognizer.OnPress += Pressed;
+        gestureRecognizer.OnDoubleTap += DoubleTapped;
+        gestureRecognizer.OnPress += Pressed;
         gestureRecognizer.OnDragStart += DragStarted;
         gestureRecognizer.OnDrag += Dragged;
         gestureRecognizer.OnDragEnd += DragEnded;
@@ -24,6 +25,13 @@ public class GestureVisualization : MonoBehaviour
     private void Tapped(Vector2 position)
     {
         text.text = "Tapped at " + position;
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(position);
+        Instantiate(tapPrefab, worldPosition, Quaternion.identity);
+    }
+
+    private void DoubleTapped(Vector2 position)
+    {
+        text.text = "Double Tapped at " + position;
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(position);
         Instantiate(tapPrefab, worldPosition, Quaternion.identity);
     }
