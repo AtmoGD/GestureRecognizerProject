@@ -46,28 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ac85ebbc0f60f4a9de853f47b1c0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputData:
-    touchStarted: 0
-    touchEnded: 0
-    touchStartPosition: {x: 0, y: 0}
-    touchPosition: {x: 0, y: 0}
-    touchDelta: {x: 0, y: 0}
-    touchStartTime: 0
-    tap: 0
-    press: 0
-    drag: 0
-    dragStart: {x: 0, y: 0}
-    dragEnd: {x: 0, y: 0}
-    swipe: 0
-    swipeDirection: 3
-  tapTime: 0.4
-  pressTime: 1
-  dragTime: 0.2
+  tapTime: 0.3
+  pressTime: 0.8
   minDragDistance: 100
-  swipeTime: 0.2
-  swipeDistance: 100
-  pinchDistance: 0.2
-  rotateDistance: 0.2
 --- !u!114 &3202440595373497905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +138,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ade5b626-2b80-4ba0-95b4-0a0e0962a74e
     m_ActionName: Gestures/Delta[/Touchscreen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15940d21-c70f-4f45-b823-c0dfbc447311
+    m_ActionName: Gestures/PrimaryInput[/Mouse/leftButton,/Touchscreen/primaryTouch/tap]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c0d68071-d09f-42c3-932f-33288542b64d
+    m_ActionName: Gestures/SecondaryInput[/Touchscreen/touch0/tap]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Mouse
   m_DefaultActionMap: Gestures
@@ -178,5 +167,8 @@ MonoBehaviour:
   text: {fileID: 0}
   tapPrefab: {fileID: 4489197647960261578, guid: 14b4ed1ff4da83e4db92784e97a16f0e, type: 3}
   pressPrefab: {fileID: 4489197647960261578, guid: 07dd5091ffc79664a9e58b7c58e69688, type: 3}
-  dragPrefab: {fileID: 4489197647960261578, guid: bf4bc9a059698a84193b320c2594b49e, type: 3}
   swipePrefab: {fileID: 4489197647960261578, guid: c1650104d698a2345857db0912b6d92a, type: 3}
+  movePrefab: {fileID: 4489197647960261578, guid: 0260ba431f635824cb8918ba32c50ffc, type: 3}
+  dragPrefab: {fileID: 4489197647960261578, guid: bf4bc9a059698a84193b320c2594b49e, type: 3}
+  pinchPrefab: {fileID: 4489197647960261578, guid: 6149b06831108c049be3eee7c83a6fb4, type: 3}
+  rotatePrefab: {fileID: 4489197647960261578, guid: 8bd49c5bdb87ccf478498442c433390e, type: 3}

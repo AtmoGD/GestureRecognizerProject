@@ -11,6 +11,46 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497868, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: tapPrefab
+      value: 
+      objectReference: {fileID: 4489197647960261578, guid: d18229af6ce9598448c42ae8300f1308, type: 3}
+    - target: {fileID: 3202440595373497868, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: dragPrefab
+      value: 
+      objectReference: {fileID: 4489197647960261578, guid: 86370f67b6dbf9d4a920500b142a4279, type: 3}
+    - target: {fileID: 3202440595373497868, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: movePrefab
+      value: 
+      objectReference: {fileID: 4489197647960261578, guid: c6633c8814ff98743ad5875a44452e9e, type: 3}
+    - target: {fileID: 3202440595373497868, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: pinchPrefab
+      value: 
+      objectReference: {fileID: 4489197647960261578, guid: 63809699ebd61aa4997c492a8c1a745b, type: 3}
+    - target: {fileID: 3202440595373497868, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: pressPrefab
+      value: 
+      objectReference: {fileID: 4489197647960261578, guid: b4eea6d5c0afe4d4da46924dfddcc285, type: 3}
+    - target: {fileID: 3202440595373497868, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: swipePrefab
+      value: 
+      objectReference: {fileID: 4489197647960261578, guid: e083e1d67d9b601419bf6a657256a4fb, type: 3}
+    - target: {fileID: 3202440595373497868, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: rotatePrefab
+      value: 
+      objectReference: {fileID: 4489197647960261578, guid: 6e7cf0c9c8dc22747a6e59bd7e880010, type: 3}
+    - target: {fileID: 3202440595373497870, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: tapTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497870, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: pressTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202440595373497870, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
+      propertyPath: minDragDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3202440595373497871, guid: 10c5da2a68670324da4884d9ace06338, type: 3}
       propertyPath: m_RootOrder
       value: 0
